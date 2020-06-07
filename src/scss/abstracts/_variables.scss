@@ -1,0 +1,27 @@
+$primary: #009be5; 
+$secondary: #4045cb;
+$tertiary: #1d1e6b;
+$bgcolor: #f7f7f7;
+$white: #f9f9fa;
+$boxShadow: 0px 0px 50px 0px rgba(119, 121, 123, 0.15);
+$textColor: #151f2d;
+$grey: #9aa4b1;
+$borderColor: rgba(0, 0, 0, 0.08);
+$siderBarbg:#18202c;
+$icon-color:#9aa4b1;
+$text-shadow: 1px 1px 1px #000, 1px 1px 1px #dfdfdf;
+$cardboxshadow: 0px 7px 30px 0px rgba(77, 84, 93, 0.08), 0px 9px 30px 0px rgba(0, 177, 179, 0.08), 0px 9px 1px -1px rgba(54, 98, 154, 0.08);
+// Spacing
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+    (
+        0: 0,
+        1: ($spacer * 0.25),
+        2: ($spacer * .5),
+        3: ($spacer * 1),
+        4: ($spacer * 1.5),
+        5: ($spacer * 3)
+    ),
+    $spacers
+ )
