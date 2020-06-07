@@ -39,6 +39,7 @@ import BillingTable from './components/BillingTable'
 import YearSlider from './components/YearSlider'
 import AllEvents from './components/AllEvents'
 import AddMemberForm from './components/AddMemberForm'
+import ResetPassword from './components/ResetPassword';
 
 
 const DefaultContainer = () => (
@@ -75,6 +76,7 @@ const DefaultContainer = () => (
     <Route  path='/allevents' component={AllEvents}></Route>
     <Route path='/addmember' component={AddMemberForm}></Route>    
     <Footer/>
+    
   </div>
 )
 export default function App() {
@@ -84,6 +86,7 @@ export default function App() {
       <Route exact path="/" component={Login}/>
       <Route  path="/signup" component={SignUp}/>
       <Route  path='/forgotpassword' component={ForgotPassword}></Route>
+      <Route  path='/resetpassword/:id' component={ResetPassword}></Route>
       <Route component={DefaultContainer}/>
     </Switch>
   </BrowserRouter>
