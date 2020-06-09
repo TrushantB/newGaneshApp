@@ -81,7 +81,7 @@ export default function ResetPassword(props:any,loginService:LoginService) {
             <div className='  forgot-form' >
               <h3 className='title'>Forgot Password </h3>
               <form className={classes.root} noValidate autoComplete='off'>
-                <Typography className='forgot-message'>No Worries! Enter your email and we will send you a reset</Typography>
+                <Typography className='forgot-message'>No Worries! Enter your email and new password </Typography>
                     <div className='input-placeholder'>
                       <TextField value={email} onChange={(e:any) => setEmail(e.target.value)} 
                       id="outlined-basic"placeholder='Email Address' variant="outlined"   className={classes.textField}/>
