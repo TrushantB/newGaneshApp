@@ -64,7 +64,13 @@ export default function ResetPassword(props:any,loginService:LoginService) {
       alert('Password reset successfully')
       setEmail('');
       setPassword('')
-    }).catch((err:any) => console.log(err))
+      
+    }).catch((err:any) => {
+      console.log(err)
+      alert(err.response.data)
+      setEmail('');
+      setPassword('')
+    })
   }
 
   return (
@@ -77,11 +83,11 @@ export default function ResetPassword(props:any,loginService:LoginService) {
               <form className={classes.root} noValidate autoComplete='off'>
                 <Typography className='forgot-message'>No Worries! Enter your email and we will send you a reset</Typography>
                     <div className='input-placeholder'>
-                      <TextField onChange={(e:any) => setEmail(e.target.value)} 
+                      <TextField value={email} onChange={(e:any) => setEmail(e.target.value)} 
                       id="outlined-basic"placeholder='Email Address' variant="outlined"   className={classes.textField}/>
                     </div>
                     <div className='input-placeholder'>
-                      <TextField onChange={(e:any) => setPassword(e.target.value)} 
+                      <TextField value={password} onChange={(e:any) => setPassword(e.target.value)} 
                       id="outlined-basic"placeholder='New Password' variant="outlined"   className={classes.textField}/>
                     </div>
                 
