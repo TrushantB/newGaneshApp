@@ -58,7 +58,20 @@ export default function ResetPassword(props:any,loginService:LoginService) {
         password: password,
         id: params.id
       }
-    console.log(data);
+    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+
+  if(email=='' && password=='') {
+    alert('Email and password fields are empty')
+    return
+  }
+  else if(!emailRegex.test(email)) {
+    alert('Incorrect email')
+    return
+  } else if(!(password.length > 7)) {
+    alert('Password must be length 8')
+    return
+  }
+  
 
     axios.put(`${baseUrl}/user/resetPassword`,data).then((response:any) => {
       alert('Password reset successfully')
@@ -67,7 +80,7 @@ export default function ResetPassword(props:any,loginService:LoginService) {
       
     }).catch((err:any) => {
       console.log(err)
-      alert(err.response.data)
+      alert('Bad Request:Password reset failed')
       setEmail('');
       setPassword('')
     })
@@ -94,7 +107,6 @@ export default function ResetPassword(props:any,loginService:LoginService) {
                 <Button onClick={() => resetRequest()} variant='contained' color='primary' className='signup-button form-button mt-3'>
                   Reset Password
                     </Button>
-
               </form>
             </div>
           </Paper>
