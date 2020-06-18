@@ -80,11 +80,11 @@ function SimpleDialog(props: SimpleDialogProps) {
           <div className='p-15 t-center'>  
              <CheckCircleIcon style={style.SuccessIcon} className='successfully-text'/>
             <h2 className='t-center m-0 f-w-500 successfully-text'>SUCCESS!</h2>
-            <p className='f-w-500 success-message' > You have changed your password succesfully!</p>
+            <p className='f-w-500 success-message' > Your password has been changed successfully!</p>
             <div className='t-center mt-30 '>
             <a href="ganeshapp://login">
             <Button variant="contained" color="primary" onClick={handleClose}>
-                    Go To In App
+                Go to GaneshaApp
                 </Button>
             </a>
           </div>
